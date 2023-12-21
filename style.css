@@ -1,0 +1,155 @@
+ /* font-family: 'Montserrat', sans-serif; */
+ @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+ /* DM Sans  */
+ @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+ 
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+.container {
+  width: 1200px;
+  margin:auto;
+  padding: 15px 0;
+}
+
+section#from {
+    overflow: hidden;
+    background: #ddd;
+    /* height: 100vh;   */
+    flex-direction: column !important;
+}
+
+form {
+    overflow: hidden;
+    padding: 40px;
+    width: 400px;
+    margin: auto;
+    border-radius: 5px;
+    border: 1px solid #d4d4d4;
+}
+
+form { 
+    overflow: hidden; 
+    padding: 40px; 
+    width: 400px; 
+    margin: auto; 
+    border-radius: 5px; 
+    background: rgb(202, 202, 202);
+    border: 1px solid rgb(212, 212, 212); 
+}
+
+form:hover {
+    background: rgb(155, 155, 155);
+    box-shadow: 1px 1px 36px rgb(174 174 174);
+    transition: 0.5s;
+}
+
+form input {
+    display: block;
+     border: none;
+    outline: none;
+    padding: 20px 20px;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    width: 90%;
+    background: #e3e3e3;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    font-size: 14px;
+}
+
+form textarea {
+    width: 92%;
+    height: 130px;
+    resize: none;
+    border: none;
+    outline: none;
+    padding: 10px 17px;
+    border-radius: 5px;
+    font-size: 15px;
+    background: #e3e3e3;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.btn {
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.btn button {
+    border: none;
+    outline: none;
+    padding: 9px 35px;
+    font-size: 17px;
+    border-radius: 20px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn button:hover {
+    background: #14193b;
+    color: #fff;
+    transition: 1s;
+}
+
+#status {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(255 255 255);
+    background: green;
+    width: 30%;
+    margin: auto;
+    padding: 10px;
+    margin-top: 10px;
+    letter-spacing: 1px;
+    display: none; 
+}
+
+#status .sucess {
+    background: green;
+    animation: status 4s ease forwards;
+}
+
+#status .error {
+    background: yellow;
+    color: white;
+    animation: status 4s ease forwards;
+}
+
+@keyframes status {
+    0%{
+        opacity: 1;
+        pointer-events: all;
+    }
+    90%{
+        opacity: 2;
+        pointer-events: all;
+    }
+    100%{
+        opacity: 0;
+        pointer-events: none;
+    }
+
+
+}
+
