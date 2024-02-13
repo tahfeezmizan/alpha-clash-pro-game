@@ -18,16 +18,16 @@
     <main class="min-h-screen bg-[url(images/background.png)] bg-center bg-no-repeat">
 
         <!-- home screen  -->
-        <section class="home hidden min-h-screen text-white flex justify-center items-center">
+        <section id="home-screen" class="min-h-screen text-white flex justify-center items-center">
             <div class="flex flex-col justify-center items-center gap-8">
                 <h1 class="text-9xl lg:text-[170px] font-anton">ALPHABET CLASH</h1>
                 <p class="text-2xl">Unleash Your Keyboard Kung Fu : Press “Enter” to Play</p>
-                <button class="btn bg-white text-black text-2xl">Play Now</button>
+                <button onclick="play()" class="btn bg-white text-black text-2xl">Play Now</button>
             </div>
         </section>
 
         <!-- play ground screen  -->
-        <section class="play-ground hidden">
+        <section id="play-ground" class="hidden">
 
             <div class="flex flex-col justify-center items-center gap-14 pt-24">
                 <!-- screen -->
@@ -92,7 +92,9 @@
 
         </section>
 
-        <section class="score flex justify-center items-center min-h-screen">
+
+        <!-- final score result   -->
+        <section class="score hidden flex justify-center items-center min-h-screen">
             <div class="text-white text-center space-y-3 p-10 rounded-2xl bg-gradient-to-br from-purple-500 to-indigo-600">
                 <h1 class="text-6xl pb-3"> <span class="font-extrabold">Score : </span><span>14</span></h1>
                 <button class="btn bg-white text-black text-2xl">Play Again</button>
@@ -100,6 +102,10 @@
             </div>
         </section>
     </main>
+
+
+    <script src="script/utlity.js"></script>
+    <script src="script/alpha-script.js"></script>
 
 </body>
 
