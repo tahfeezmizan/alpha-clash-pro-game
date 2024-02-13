@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@500&family=Poppins:wght@400;500;600;800&display=swap');
 
+
+
 .font-poppins {
     font-family: "Poppins", sans-serif;
-    font-family: "Inter", sans-serif;
-    font-family: "Anton", sans-serif;
 }
 
 .font-inter {
