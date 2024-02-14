@@ -12,7 +12,9 @@ function handleKeyboardButtonPress(event){
 
     //check match or not
     if(playerPressedKey === expectedAlphabet){
-        console.log('Get a point')
+        console.log('you have pressed correctly', expectedAlphabet);
+        removeBackgroundColorById(expectedAlphabet)
+        continueGame()
     }
     else{
         console.log('You lost a life')
@@ -21,7 +23,6 @@ function handleKeyboardButtonPress(event){
 
 // capture keyboard key press detect
 document.addEventListener('keyup', handleKeyboardButtonPress)
-
 
 
 function continueGame() {
