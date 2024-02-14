@@ -8,6 +8,12 @@ function showElementById(elementId) {
     element.classList.remove('hidden')
 }
 
+function getElementTextById(elementId){
+    const element = document.getElementById(elementId);
+    const text = element.innerText;
+    return text;
+}
+
 // characters bg color add
 function setBackgroundColorById(elementId){
     const element = document.getElementById(elementId);
@@ -45,7 +51,6 @@ function getARandomAlphabet() {
     const alphabet = alphabets[randomIndex];
     return alphabet;
 }
-// getARandomAlphabet()
 
 
 

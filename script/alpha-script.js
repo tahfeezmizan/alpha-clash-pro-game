@@ -1,7 +1,13 @@
 
 function handleKeyboardButtonPress(event) {
-    const playerPressedKey = event.key
-    // console.log('payer pressed', playerPressedKey);
+    const playerPressedKey = event.key;
+
+    console.log("Pressed Key", playerPressedKey)
+    
+    // stop the game if pressed Esc
+    if(playerPressedKey === 'Escape'){
+        gameOver();
+    }
 
     // get the expected to press
     const currentAlphabetElement = document.getElementById('current-alphabet');
@@ -19,8 +25,8 @@ function handleKeyboardButtonPress(event) {
         const updatedScore = currentScore + 1;
         setTextElementValueById('current-score', updatedScore);
 
-
         // ----------------
+        // method 2
         // // 1. get current score 
         // const currentScoreElement = document.getElementById('current-score');
         // const currentScoreText = currentScoreElement.innerText;
@@ -39,17 +45,15 @@ function handleKeyboardButtonPress(event) {
         continueGame()
     }
     else {
-        console.log('You lost a life');
-
         const currentLife = getTextElementValueById('current-life');
         const updatedLife = currentLife - 1;
         setTextElementValueById('current-life', updatedLife);
-
 
         if (updatedLife === 0) {
             gameOver();
         }
 
+        // method 2
         // const currentLifeElement = document.getElementById('current-life');
         // const currentLifeText = currentLifeElement.innerText;
         // const currentLife = parseInt(currentLifeText);
@@ -94,5 +98,16 @@ function play() {
 function gameOver() {
     hideElementById('play-ground');
     showElementById('final-score');
+
+    //update final score
+    const lastScore = getTextElementValueById('current-score');
+    console.log(lastScore);
+
+    setTextElementValueById('last-score', lastScore);
+
+
+    // clear the last selected alphabet highlight
+    const currentAlphabet = getElementTextById('current-alphabet');
+    removeBackgroundColorById(currentAlphabet);
 }
 
