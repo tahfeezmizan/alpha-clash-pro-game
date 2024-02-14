@@ -17,7 +17,6 @@ function setBackgroundColorById(elementId){
 function getARandomAlphabet() {
     // create an alphabet array
     const alphabets = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'f', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-    
 
     // create random index generator between 0 - 25;
     const randomNumber = Math.random() * 25;
