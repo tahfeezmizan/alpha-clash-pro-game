@@ -97,11 +97,12 @@
 
 
         <!-- final score result   -->
-        <section class="score hidden flex justify-center items-center min-h-screen">
+        <section id="final-score" class="hidden flex justify-center items-center min-h-screen">
             <div
                 class="text-white text-center space-y-3 p-10 rounded-2xl bg-gradient-to-br from-purple-500 to-indigo-600">
+                <h3 class="text-3xl text-yellow-400">Game Over!</h3>
                 <h1 class="text-6xl pb-3"> <span class="font-extrabold">Score : </span><span>14</span></h1>
-                <button class="btn bg-white text-black text-2xl">Play Again</button>
+                <button onclick="play()" class="btn bg-white text-black text-2xl">Play Again</button>
                 <p class="text-xl font-medium">Practice will make you Pro</p>
             </div>
         </section>

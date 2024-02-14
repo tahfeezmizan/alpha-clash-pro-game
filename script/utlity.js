@@ -19,6 +19,21 @@ function removeBackgroundColorById(elementId){
     element.classList.remove('bg-yellow-600');
 }
 
+
+// live score increase and life decrease
+function getTextElementValueById(elementId){
+    const element = document.getElementById(elementId);
+    const elementValueText = element.innerText;
+    const value = parseInt(elementValueText);
+    return value;
+}
+
+function setTextElementValueById(elementId, value){
+    const element = document.getElementById(elementId);
+    element.innerText = value;
+}
+
+
 function getARandomAlphabet() {
     // create an alphabet array
     const alphabets = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'f', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
