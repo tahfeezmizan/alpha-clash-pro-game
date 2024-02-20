@@ -8,33 +8,33 @@ function showElementById(elementId) {
     element.classList.remove('hidden')
 }
 
-function getElementTextById(elementId){
+function getElementTextById(elementId) {
     const element = document.getElementById(elementId);
     const text = element.innerText;
     return text;
 }
 
 // characters bg color add
-function setBackgroundColorById(elementId){
+function setBackgroundColorById(elementId) {
     const element = document.getElementById(elementId);
     element.classList.add("bg-yellow-600");
 }
 
-function removeBackgroundColorById(elementId){
+function removeBackgroundColorById(elementId) {
     const element = document.getElementById(elementId);
     element.classList.remove('bg-yellow-600');
 }
 
 
 // live score increase and life decrease
-function getTextElementValueById(elementId){
+function getTextElementValueById(elementId) {
     const element = document.getElementById(elementId);
     const elementValueText = element.innerText;
     const value = parseInt(elementValueText);
     return value;
 }
 
-function setTextElementValueById(elementId, value){
+function setTextElementValueById(elementId, value) {
     const element = document.getElementById(elementId);
     element.innerText = value;
 }

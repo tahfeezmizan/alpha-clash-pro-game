@@ -1,3 +1,8 @@
+// add audio sound for press right key and wrong key 
+
+const audio = new Audio();
+
+
 
 function handleKeyboardButtonPress(event) {
     const playerPressedKey = event.key;
@@ -6,19 +11,20 @@ function handleKeyboardButtonPress(event) {
     
     // stop the game if pressed Esc
     if(playerPressedKey === 'Escape'){
+        alert("Are You leave the game")
         gameOver();
+
     }
 
     // get the expected to press
     const currentAlphabetElement = document.getElementById('current-alphabet');
     const targetAlphabet = currentAlphabetElement.innerText;
     const expectedAlphabet = targetAlphabet.toLocaleLowerCase();
-    // console.log(playerPressedKey, expectedAlphabet);
-
 
     //check match or not
     if (playerPressedKey === expectedAlphabet) {
-        // console.log('you have pressed correctly', expectedAlphabet);
+        
+        audio()
 
         // update score 
         const currentScore = getTextElementValueById('current-score');
@@ -90,10 +96,8 @@ function play() {
     // reset score and life
     setTextElementValueById('current-life', 5);
     setTextElementValueById('current-score', 0);
-
     continueGame()
 }
-
 
 function gameOver() {
     hideElementById('play-ground');
@@ -104,7 +108,6 @@ function gameOver() {
     console.log(lastScore);
 
     setTextElementValueById('last-score', lastScore);
-
 
     // clear the last selected alphabet highlight
     const currentAlphabet = getElementTextById('current-alphabet');
