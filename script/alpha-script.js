@@ -4,6 +4,8 @@ const audio = new Audio();
 
 let isGamePlayOn = false;
 
+const artBoard = document.getElementById('art-board');
+
 
 function handleKeyboardButtonPress(event) {
     if (isGamePlayOn === false) return;
@@ -55,14 +57,18 @@ function handleKeyboardButtonPress(event) {
         continueGame()
     }
     else {
-        // if (isGamePlayOn === true) return;
+
 
         audio.src = '../audio/wrong.mp3';
-        audio.play()
+        audio.play();
 
         const currentLife = getTextElementValueById('current-life');
         const updatedLife = currentLife - 1;
         setTextElementValueById('current-life', updatedLife);
+
+        const updatedLifeParentage = (updatedLife / 5) * 100;
+
+        artBoard.style.background = `linear-gradient(#ffffffb3 ${updatedLifeParentage}%, red)`;
 
         if (updatedLife === 0) {
             gameOver();
@@ -117,11 +123,15 @@ function gameOver() {
     //update final score
     const lastScore = getTextElementValueById('current-score');
     // console.log(lastScore);
-    
+
     setTextElementValueById('last-score', lastScore);
-    
+
     // clear the last selected alphabet highlight
     const currentAlphabet = getElementTextById('current-alphabet');
     removeBackgroundColorById(currentAlphabet);
+
+    isGamePlayOn = false;
+
+    artBoard.style.background = `linear-gradient(#ffffffb3 100%, red)`;
 }
 
