@@ -24,7 +24,8 @@ function handleKeyboardButtonPress(event) {
     //check match or not
     if (playerPressedKey === expectedAlphabet) {
         
-        audio()
+        audio.src = '../audio/success.mp3';
+        audio.play()
 
         // update score 
         const currentScore = getTextElementValueById('current-score');
@@ -51,6 +52,9 @@ function handleKeyboardButtonPress(event) {
         continueGame()
     }
     else {
+        audio.src = '../audio/wrong.mp3';
+        audio.play()
+
         const currentLife = getTextElementValueById('current-life');
         const updatedLife = currentLife - 1;
         setTextElementValueById('current-life', updatedLife);
