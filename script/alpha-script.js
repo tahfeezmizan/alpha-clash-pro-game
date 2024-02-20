@@ -2,15 +2,18 @@
 
 const audio = new Audio();
 
+let isGamePlayOn = false;
 
 
 function handleKeyboardButtonPress(event) {
+    if (isGamePlayOn === false) return;
+
     const playerPressedKey = event.key;
 
     console.log("Pressed Key", playerPressedKey)
-    
+
     // stop the game if pressed Esc
-    if(playerPressedKey === 'Escape'){
+    if (playerPressedKey === 'Escape') {
         alert("Are You leave the game")
         gameOver();
 
@@ -23,7 +26,7 @@ function handleKeyboardButtonPress(event) {
 
     //check match or not
     if (playerPressedKey === expectedAlphabet) {
-        
+
         audio.src = '../audio/success.mp3';
         audio.play()
 
@@ -52,6 +55,8 @@ function handleKeyboardButtonPress(event) {
         continueGame()
     }
     else {
+        // if (isGamePlayOn === true) return;
+
         audio.src = '../audio/wrong.mp3';
         audio.play()
 
@@ -100,6 +105,8 @@ function play() {
     // reset score and life
     setTextElementValueById('current-life', 5);
     setTextElementValueById('current-score', 0);
+    isGamePlayOn = true;
+
     continueGame()
 }
 
@@ -109,10 +116,10 @@ function gameOver() {
 
     //update final score
     const lastScore = getTextElementValueById('current-score');
-    console.log(lastScore);
-
+    // console.log(lastScore);
+    
     setTextElementValueById('last-score', lastScore);
-
+    
     // clear the last selected alphabet highlight
     const currentAlphabet = getElementTextById('current-alphabet');
     removeBackgroundColorById(currentAlphabet);
